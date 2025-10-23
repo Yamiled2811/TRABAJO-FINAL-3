@@ -1,5 +1,3 @@
-
-
 const MOVIES_URL = "data/moviesdb.json";
 
 function MovieCard({ movie }) {
