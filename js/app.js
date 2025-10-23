@@ -1,4 +1,3 @@
-
 function Header() {
     return (
       <header className="bg-gray-900 shadow-lg sticky top-0 z-50">
