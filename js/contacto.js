@@ -1,15 +1,15 @@
-
 function ContactForm() {
     const [formData, setFormData] = React.useState({
       name: "",
       email: "",
       message: "",
-      pais: "",
+      cellphone:"",
+      
     });
   
     const handleInputChange = (e) => {
       const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
+      setFormData({ ...formData, [name]: value });   
     };
   
     const handleSubmit = (e) => {
@@ -24,7 +24,7 @@ function ContactForm() {
           <div className="max-w-4xl mx-auto">
             {/* Formulario de Contacto */}
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold text-blue-600 dark:text-white mb-6 text-center">
                 Regístrate
               </h2>
   
@@ -34,7 +34,7 @@ function ContactForm() {
                     htmlFor="name"
                     className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                   >
-                    Nombre:
+                    Nombres:
                   </label>
                   <input
                     type="text"
@@ -45,6 +45,41 @@ function ContactForm() {
                     required
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
                   />
+                </div>
+  
+                 <div>
+                  <label
+                    htmlFor="lastname"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
+                    Apellidos:
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="cellphone"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
+                    Celular:
+                  </label>
+                  <input
+                    type="number"
+                    id="celular"
+                    name="celular"
+                    value={formData.celular}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"/>
                 </div>
   
                 <div>
@@ -61,8 +96,7 @@ function ContactForm() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
-                  />
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"/>
                 </div>
   
                 <div>
@@ -83,26 +117,7 @@ function ContactForm() {
                   ></textarea>
                 </div>
   
-                <div>
-                  <label
-                    htmlFor="pais"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-                  >
-                    País:
-                  </label>
-                  <select
-                    id="pais"
-                    name="pais"
-                    value={formData.pais}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
-                  >
-                    <option value="peru">Perú</option>
-                    <option value="colombia">Colombia</option>
-                    <option value="mexico">México</option>
-                    <option value="argentina">Argentina</option>
-                  </select>
-                </div>
+            
   
                 <button
                   type="submit"
